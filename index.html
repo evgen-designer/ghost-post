@@ -4,15 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghost Post - Get Early Access</title>
-    <!-- 1. CORRECTED FAVICON PATH (removed leading slash) -->
-    <link rel="icon" type="image/png" href="images/ghost-post-icon.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
+    <!-- FAVICONS (The definitive, bulletproof set) -->
+    <!-- Make sure these files are in the correct folders -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="images/ghost-post-icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/ghost-post-icon.png">
+
+    <!-- META TAGS (Handles the link preview text) -->
+    <!-- ACTION: Update YOUR_DOMAIN.com and create a preview image -->
+    <meta name="description" content="Share fleeting thoughts that vanish in 24 hours. Your posts are archived, not deleted. It's sharing, without the pressure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.YOUR_DOMAIN.com/">
+    <meta property="og:title" content="Ghost Post - Ephemeral Sharing, Without the Pressure">
+    <meta property="og:description" content="Share fleeting thoughts that vanish in 24 hours. Your posts are archived, not deleted.">
+    <meta property="og:image" content="https://www.YOUR_DOMAIN.com/images/ghost-post-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.YOUR_DOMAIN.com/">
+    <meta name="twitter:title" content="Ghost Post - Ephemeral Sharing, Without the Pressure">
+    <meta name="twitter:description" content="Share fleeting thoughts that vanish in 24 hours. Your posts are archived, not deleted.">
+    <meta name="twitter:image" content="https://www.YOUR_DOMAIN.com/images/ghost-post-preview.png">
+
+    <!-- STRUCTURED DATA (Tells Google your official logo) -->
+    <!-- ACTION: Update YOUR_DOMAIN.com once your site is live -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://www.YOUR_DOMAIN.com/",
+      "logo": "https://www.YOUR_DOMAIN.com/images/ghost-post-icon.png"
+    }
+    </script>
+
+    <!-- ANALYTICS SCRIPTS -->
+    <!-- ACTION: Paste your own IDs from Microsoft Clarity and Google Analytics -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_ANALYTICS_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_GOOGLE_ANALYTICS_ID');
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #121212;
@@ -20,34 +62,11 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        .container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .main-content {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .illustration {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            flex-shrink: 0;
-        }
-
+        .container { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .main-content { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 50px; }
+        .illustration { position: relative; width: 280px; height: 280px; flex-shrink: 0; }
         .book-3d {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            position: absolute; width: 100%; height: 100%;
             background: linear-gradient(135deg, #2C2C2C 0%, #1E1E1E 100%);
             border-radius: 48px;
             transform: rotate(12deg);
@@ -55,109 +74,34 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             cursor: pointer;
         }
-
-        .book-3d:hover {
-            transform: rotate(6deg);
-        }
-
+        .book-3d:hover { transform: rotate(6deg); }
         .book-inner {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
+            position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px;
             background: #252525;
             border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
         }
-
-        .content {
-            text-align: center;
-            width: 100%;
-        }
-
-        .title {
-            font-size: 42px;
-            font-weight: 800;
-            color: #FFFFFF;
-            margin-bottom: 16px;
-            line-height: 1.1;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #A0A0A0;
-            margin-bottom: 32px;
-            line-height: 1.5;
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        .content { text-align: center; width: 100%; }
+        .title { font-size: 42px; font-weight: 800; color: #FFFFFF; margin-bottom: 16px; line-height: 1.1; }
+        .subtitle { font-size: 18px; color: #A0A0A0; margin-bottom: 32px; line-height: 1.5; max-width: 450px; margin-left: auto; margin-right: auto; }
         .cta-button {
-            display: inline-block;
-            background-color: #FFFFFF;
-            color: #121212;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
+            display: inline-block; background-color: #FFFFFF; color: #121212;
+            padding: 16px 36px; border-radius: 50px; font-size: 18px; font-weight: 600;
+            text-decoration: none; transition: all 0.3s ease; margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
         }
-
-        .cta-button:hover {
-            background-color: #EAEAEA;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
-        }
-
-        .social-proof {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-
-        .avatars {
-            display: flex;
-        }
-
-        .avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 2px solid #121212;
-            margin-left: -12px;
-            object-fit: cover;
-        }
-
+        .cta-button:hover { background-color: #EAEAEA; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15); }
+        .social-proof { display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 14px; color: #777; }
+        .avatars { display: flex; }
+        .avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #121212; margin-left: -12px; object-fit: cover; }
         @media (min-width: 1024px) {
-            .main-content {
-                max-width: 1100px;
-                flex-direction: row;
-                justify-content: center;
-                gap: 70px;
-            }
-
-            .content {
-                text-align: left;
-                width: auto;
-                max-width: 450px;
-            }
+            .main-content { max-width: 1100px; flex-direction: row; justify-content: center; gap: 70px; }
+            .content { text-align: left; width: auto; max-width: 450px; }
             .subtitle { margin-left: 0; }
             .social-proof { justify-content: flex-start; }
             .illustration { width: 330px; height: 330px; }
             .title { font-size: 50px; }
         }
-        
         @media (max-width: 480px) {
             .container { padding: 50px 20px; }
             .illustration { width: 240px; height: 240px; }
@@ -165,16 +109,8 @@
             .subtitle { font-size: 17px; }
             .cta-button { padding: 15px 30px; font-size: 17px; }
         }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .content > * {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .content > * { animation: fadeInUp 0.6s ease forwards; }
         .content > *:nth-child(2) { animation-delay: 0.1s; }
         .content > *:nth-child(3) { animation-delay: 0.2s; }
         .content > *:nth-child(4) { animation-delay: 0.3s; }
@@ -186,7 +122,6 @@
             <div class="illustration">
                 <div class="book-3d">
                     <div class="book-inner">
-                         <!-- 2. CORRECTED ILLUSTRATION IMAGE PATH (removed leading slash) -->
                          <img src="images/ghost-post-icon.png" alt="Ghost Post icon" style="width: 75%; height: 75%; object-fit: contain;">
                     </div>
                 </div>
@@ -197,7 +132,8 @@
                 <p class="subtitle">
                     Share fleeting thoughts that vanish in 24 hours. Your posts are archived, not deleted. It's sharing, without the pressure.
                 </p>
-                <a href="YOUR_AIRTABLE_FORM_LINK" 
+                <!-- This link now points to your new Airtable form -->
+                <a href="https://airtable.com/apphcmyUurIke9vIH/pag9j1bvjWK7kHzgO/form" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="cta-button">
